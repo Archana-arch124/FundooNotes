@@ -1,0 +1,115 @@
+.root {
+    display: flex;
+  }
+  .lastContent {
+    display: flex;
+    align-items: flex-start;
+  }
+  .drawerButton {
+    margin: 8px 0 8px 0;
+  }
+  .drawerButton:hover {
+    background-color: rgb(236, 236, 236);
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+  }
+  .topBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .note{
+    color: black;
+  }
+  .leftOptions {
+    width: 70%;
+    /* border: black solid; */
+    display: flex;
+    justify-self: start;
+    justify-content: space-between;
+  }
+  .rightOptions {
+    width: 26%;
+    /* border: black solid; */
+    display: flex;
+    justify-self: end;
+    justify-content: space-between;
+  }
+  .headerIcon {
+    width: 45px;
+  }
+  .startOptions {
+    display: flex;
+    align-items: center;
+  }
+  .buttonContainer {
+    display: flex;
+  }
+  .headerTitle {
+    margin: 3%;
+    color: #5f6368;
+    font-size: x-large;
+    font-family: "Product Sans", Arial, sans-serif;
+  }
+  .search {
+    margin: 5px 5px 5px 5px;
+    height: 50px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    border-radius: 8px;
+  }
+  .searchedButton {
+    display: none;
+  }
+  .searchIcon {
+    margin-left: 3%;
+    color: black;
+  }
+  .searchInput {
+    margin-left: 2%;
+    width: 80%;
+  }
+  .appsContainer {
+    display: flex;
+  }
+  .MenuList{ 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   } 
+  
+  .displayNotes{
+    width: 85vw;
+    margin: 1%;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .search {
+      display: none;
+    }
+    .searchedButton {
+      display: initial;
+    }
+    .leftOptions {
+      width: auto;
+    }
+    .rightOptions {
+      width: auto;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .headerTitle {
+      margin: 1%;
+      font-size: 1.1em;
+    }
+    .headerIcon {
+      width: 30px;
+    }
+    .rightOptions {
+      justify-content: flex-end;
+    }
+  }
