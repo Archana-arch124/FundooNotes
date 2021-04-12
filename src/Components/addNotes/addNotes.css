@@ -1,0 +1,79 @@
+.addNotesMain {
+    width: 579px;
+      display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+  2px 4px 6px 4px rgba(60, 64, 67, 0.149);
+  border-radius: 10px;
+}
+.addNoteField{
+    width: 100%;
+
+}
+.notesField {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.noteInput{
+    display: flex;
+    align-items: center;
+    padding: 7px 15px 7px 15px;
+    width: 100%;
+}
+.simpleNoteShow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 100%;
+
+}
+.addNoteOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.closeNotes{
+  padding: 6px 10px 7px 244px; 
+}
+.closeNotes:hover{
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 715px){
+    .addNotesMain {
+        width: 100%;
+    }
+    .addNoteOptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+}
+@media only screen and (max-width: 455px){
+   .noteInput{
+    display: flex;
+    flex-direction: column;   }
+}
+@media only screen and (max-width: 400px){
+   .addNoteOptions{
+       display: flex;
+       flex-direction: column;
+   }
+   .closeNotes{
+       width: 100%;
+       display: flex;
+       justify-content: flex-end;
+   }
+   .notesField {
+        display: flex;
+        flex-direction: column;
+        /* padding: 7px 15px 0px 15px; */
+        width: 100%;
+   }
+ }

@@ -3,8 +3,8 @@ import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import "./registration.css";
-import logo from "C:/ReactProject2/fundoonotes/src/Assets/logo.svg";
-import Services from "../../Services/userServices";
+import logo from "../Assets/logo.svg";
+import Services from "../../../Services/userServices";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 
@@ -14,7 +14,7 @@ function Alert(props) {
 
 const service = new Services();
 
-export default class Registration extends React.Component {
+export default class signUp extends React.Component {
 
   constructor(props){
     super(props)
@@ -195,7 +195,7 @@ export default class Registration extends React.Component {
   render() {
     return (
       <div className="registration">
-        <div  className="signupPage">
+        <div elevation={0} className="signupPage">
           <div className="header">
             <span className="inlineTitle">
               <b>

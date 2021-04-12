@@ -1,8 +1,8 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import "./forgot.css";
-import Services from "C:/ReactProject2/fundoonotes/src/Services/userService.js";
+import "./forgotPassword.css";
+import Services from "../../Services/userServices";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 const service = new Services();
@@ -11,7 +11,7 @@ function Alert(props) {
   return <MuiAlert variant="filled" {...props} />;
 }
 
-export default class ForgotPassword extends React.Component {
+export default class Hello extends React.Component {
   
   nextPath(path) {
     this.props.history.push(path);
@@ -24,13 +24,11 @@ export default class ForgotPassword extends React.Component {
       emailFlag: false,
       setOpen: false,
       open: false,
-      showPassword: false,
       snackMessage: "",
       snackType: ""
     };
   }
 
- 
   change = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -55,7 +53,7 @@ export default class ForgotPassword extends React.Component {
     ) {
       errors.emailFlag = true;
       isError = true;
-      errors.emailError = "Email is not proper";
+      errors.emailError = "Enter Email address";
     }
     this.setState({
       ...errors,
@@ -77,8 +75,10 @@ export default class ForgotPassword extends React.Component {
         email: this.state.email,
       };
       service
-        .forgotPassword(data).then((result) => {
-          console.log("Mail Sent to given email" + result);
+        .forgotPassword(data)
+        .then((data) => {
+          let obj = JSON.stringify(data);
+          console.log("Mail Sended to given email" + obj);
           this.setState({snackType: "success", snackMessage: "Mail Sent to given email", open: true, setOpen: true})
         })
         .catch((err) => {
@@ -92,36 +92,33 @@ export default class ForgotPassword extends React.Component {
   render() {
     return (
       <div className="main">
-        <div  className="ForgetPassPage">
-        <div className="regHeader">
-                        <div className="fundooContainerF">
-                            <div className="blue">F</div>
-                            <div className="red">u</div>
-                            <div className="yellow">n</div>
-                            <div className="blue">d</div>
-                            <div className="green">o</div>
-                            <div className="red">o</div>
-                        </div>
-          </div>
-          <span className="titleF">Forgot Password</span>
-          <div className="headerTextE">Enter your  Email Address</div>
-
+        <div elevation={0} className="ForgetPassPage">
+          <span className="inlineTitle">
+            <b>
+              <font color="#1976d2">F</font>
+              <font color="#e53935">u</font>
+              <font color="#ffb74d">n</font>
+              <font color="#1976d2">d</font>
+              <font color="#388e3c">o</font>
+              <font color="#e53935">o</font>
+            </b>
+          </span>
+          <span className="title">Forgot Password</span>
+          Enter your Valid Email Address
           <form className="Form">
             <div className="inputField">
               <TextField
-                size="small"
                 className="input"
                 label="Email"
                 variant="outlined"
-                fullWidth
                 name="email"
+                transform= "translate(14px, 16px) scale(1)"
                 value={this.state.email}
                 helperText={this.state.emailError}
                 error={this.state.emailFlag}
                 onChange={(e) => this.change(e)}
               />
             </div>
-            
             <span className="buttonFooter">
             <div className="signInLink">
                   <Button
@@ -135,7 +132,7 @@ export default class ForgotPassword extends React.Component {
                   variant="contained"
                   onClick={(e) => this.onSubmit(e)}
                   color="primary"
-                  >
+                >
                   Send
                 </Button>
               </div>

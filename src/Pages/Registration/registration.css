@@ -1,165 +1,101 @@
 .registration {
-  width: 592px;
+  width: 660px;
   box-sizing: border-box;
+}
+.signupPage {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  .inputField1{
-    width: 100%;
-    margin: 2%;
-    padding: 6.5px 0px;
-    width: 100%;
-  }
-  .fundooContainer1{
-    display: flex;
-    justify-content: start;
-    font-family: "Noto Sans Myanmar UI";
-    height: 33px;
-    flex-direction: row;
-    font-size: 29px;
-    margin-left: 5px;
-  }
-  .blue{
-    color: blue;
-  }
-  .red{
-    color: red;
-  }
-  .yellow{
-    color: #f9b906;
-  }
-  .green{
-    color: green;
-  }
-    
-.regHeader {
-   
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: rgb(223, 223, 223) solid 1px;
+  border-radius: 5px;
+  padding: 48px 20px 36px 20px;
+}
+.header {
+  margin: 0 4% 1%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-left: 10px;
-
 }
-.signupPage {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    border: rgb(223, 223, 223) solid 1px;
-    border-radius: 5px;
-    padding: 20px 31px 23px 32px;
-    }
-  .header {
-    margin: 0px 2% -11%;
-        display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  .headerText {
-    font-family: "Google Sans";
-    font-size: 24px;
-  }
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .inputs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .form{
-    width: 100%;
-      display: flex;
-    justify-content: center;
-    flex-direction: column; 
-   }
-   .message{
-    color: #6d7077;
-    font-size: 14px;
-    text-align: left;
-    font-family: "Noto Sans Myanmar UI";
-    font-weight: 400;
-    padding-left: 21px;
-    display: flex;
+.headerText {
+  font-family: "Google Sans";
+  font-size: 24px;
 }
-.helpTxt {
-  color: #6d7077;
-  font-size: 14px;
-  text-align: left;
-  font-family: "Noto Sans Myanmar UI";
-  font-weight: 400;
-  padding-left: 21px;
+.container {
   display: flex;
-  margin-bottom: 26px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
 }
-
+.inputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.inputField{
+  width: 100%;
+  height: 9vh;
+  margin: 2%;
+}
+.form{
+  width: 100%;
+}
+.regImg {
+  width: 60%;
+  margin-top: -123px;
+}
+.ImgText{
+text-align: center;
+margin: 0%;
+}
+.footerButtons {
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nextButton{
+  justify-self: center;
+}
+.signInLink{
+  align-self:flex-start ;
+}
 .checkBoxInputs{
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+@media only screen and (max-width: 900px) {
   .regImg {
-    justify-content: space-between;
-    width: 66%;
+    display: none;
+  }
+  .registration {
+    width: 390px;
+  }
+  .signupPage{
+    justify-content: center;
+  }
+  .container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: -138px;
-    padding-left: 14px;
-  }
-  .ImgText{
-  text-align: center;
-  margin: 0%;
-  }
-  .footerButtons {
-    width: 97%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top:25px;
-  }
-  .nextButton{
-    justify-self: center;
-  }
-  .signInLink{
-    align-self:flex-start ;
   }
  
-  @media only screen and (max-width: 900px) {
-    .regImg {
-      display: none;
-    }
-    .main {
-      width: 390px;
-    }
-    .signupPage{
-      justify-content: center;
-      
-    }
-    .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-   
+}
+@media only screen and (max-width: 600px) {
+  .signupPage{
+    border: none;
   }
-  @media only screen and (max-width: 600px) {
-    .signupPage{
-      border: none;
-      width: 100%;
-    }
-    .inputs {
-    display: flex;
-    flex-direction: column;
-    }
-    .registration{
-      width: 100%;
-    }
-  
+  .inputs {
+  display: flex;
+  flex-direction: column;
   }
+  .registration{
+    width: 100%;
+  }
+
+}

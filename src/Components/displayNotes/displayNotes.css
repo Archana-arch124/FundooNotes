@@ -1,0 +1,43 @@
+.noteBlock{
+    width: 250px;
+        display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: #d3d3d3 solid 1px;
+    border-radius: 8px;
+    margin: 1%;
+}
+.optionContainer{
+    height: 30px;
+}
+.inputBlock{
+    display: flex;
+    flex-direction: column;
+}
+.noteOption{
+    display: none;
+    cursor: pointer;
+    width: 120%;
+}
+.noteBlock:hover .noteOption{
+    display: block;
+}
+.displayText{
+    font-size: large;
+    margin: 3px 4px 4px 4px;
+}
+.AllNotes{
+    display: flex;
+    flex-flow: wrap;
+    align-items: flex-start;
+    margin-top: 28px;
+}
+
+.addnoteNone{
+    display: none;
+}
+@media only screen and (max-width: 615px){
+    .noteBlock{
+    margin: 3%;
+    }
+}

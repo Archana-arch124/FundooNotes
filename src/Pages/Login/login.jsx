@@ -1,16 +1,16 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import Services from "C:/ReactProject2/fundoonotes/src/Services/userService.js";
+import Services from "../../Services/userServices";
 import Checkbox from "@material-ui/core/Checkbox";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import "./login.css";
 const service = new Services();
 
- function Alert(props) {
+function Alert(props) {
   return <MuiAlert variant="filled" {...props} />;
-} 
+}
 
 export default class Login extends React.Component {
   constructor(props){
@@ -23,6 +23,8 @@ export default class Login extends React.Component {
     passwordError: "",
     passwordFlag: false,
     showPassword: false,
+    setOpen: false,
+    open: false,
     snackMessage: "",
     snackType: ""
   };
@@ -62,7 +64,7 @@ export default class Login extends React.Component {
     if (!/[a-zA-Z0-9._]+[@]{1}[a-zA-Z120-9]*[.]{1}[a-zA-Z]*$/.test(this.state.email)) {
       errors.emailFlag = true;
       isError = true;
-      errors.emailError = "Enter email Address";
+      errors.emailError = "Email entered is not valid";
     }
     if (this.state.password.length === 0) {
       errors.passwordFlag = true;
@@ -100,13 +102,20 @@ export default class Login extends React.Component {
         email: this.state.email,
         password: this.state.password,
       };
-      service.login(loginData).then((Data) => {
-       console.log("Login Successful ",Data)
+      service.login(loginData).then((loginData) => {
+        console.log("Login Successful "+JSON.stringify(loginData.data.id))
+        localStorage.setItem("fundooToken",loginData.data.id)
+        localStorage.setItem("UserFName",loginData.data.firstName)
+        localStorage.setItem("UserLName",loginData.data.lastName)
+        localStorage.setItem("UserEmail",loginData.data.email)
+        localStorage.setItem("UserId",loginData.data.userId)
         this.setState({snackType: "success", snackMessage: "Login successful", open: true, setOpen: true})
-        this.nextPath("../dashboard");
+        setTimeout(() => {  this.nextPath(`../dashboard/notes`); }, 2500);
+        
         })
         .catch((loginData) => {
-          console.log("Login Failed" + loginData);
+          let obj = JSON.stringify(loginData);
+          console.log("Login Failed" + obj);
           this.setState({snackType: "error", snackMessage: "Login Failed", open: true, setOpen: true})
         });
     } else {
@@ -117,19 +126,19 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="main">
-        <div  className="pageL">
-        <div className="regHeader">
-                        <div className="fundooContainerL">
-                            <div className="blue">F</div>
-                            <div className="red">u</div>
-                            <div className="yellow">n</div>
-                            <div className="blue">d</div>
-                            <div className="green">o</div>
-                            <div className="red">o</div>
-                        </div>
+        <div elevation={0} className="page">
+          <span className="inlineTitle">
+            <b>
+              <font color="#1976d2">F</font>
+              <font color="#e53935">u</font>
+              <font color="#ffb74d">n</font>
+              <font color="#1976d2">d</font>
+              <font color="#388e3c">o</font>
+              <font color="#e53935">o</font>
+            </b>
+          </span>
           <span className="signIn">Sign in</span>
-          <div className="headerText1"> Use your Fundoo Account</div>
-          </div>
+          Use your Fundoo Account
           <form className="loginForm">
             <div className="inputfield">
               <TextField
@@ -137,7 +146,6 @@ export default class Login extends React.Component {
                 className="input"
                 label="Email"
                 variant="outlined"
-                fullWidth
                 name="email"
                 value={this.state.email}
                 helperText={this.state.emailError}
@@ -152,7 +160,6 @@ export default class Login extends React.Component {
                 label="Password"
                 type={this.state.showPassword ? "text" : "password"}
                 variant="outlined"
-                fullWidth
                 name="password"
                 value={this.state.password}
                 onChange={(e) => this.change(e)}
@@ -170,18 +177,16 @@ export default class Login extends React.Component {
                 Show Password
               </span>
             <div className="forgetPassword">
-              <Button color="primary" onClick={() => this.nextPath('../forgotPassword')} >Forgot password?</Button>
+              <Button color="primary" onClick={() => this.nextPath('../forgotPassword')}>Forgot password?</Button>
             </div>
             <span className="footer">
               <div className="button">
-                <Button color="primary" size="small"  onClick={() => this.nextPath('../registration')} >
+                <Button color="primary" onClick={() => this.nextPath('../registration')}>
                   Create account
                 </Button>
-
               </div>
               <div className="button">
                 <Button
-                   size="small"
                   variant="contained"
                   color="primary"
                   onClick={(e) => this.onSubmit(e)}>
