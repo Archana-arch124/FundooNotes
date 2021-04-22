@@ -1,0 +1,29 @@
+<div className="button">
+                <IconButton
+                className={classes.appBarButton}
+                  onClick={profileHandleOpen}>
+                  <AccountCircleOutlinedIcon className={classes.iconLogo} />
+                </IconButton>
+                <Paper>
+                  <Menu
+                    anchorEl={anchorE2}
+                    open={Boolean(anchorE2)}
+                    onClose={profileHandleClose}>
+                    <div className="MenuList">
+                    <MenuItem>
+              <AccountCircleOutlinedIcon className={classes.profile} 
+  style={{ fontSize: 100 }}/>
+                    </MenuItem>
+                    <MenuItem>
+                      {localStorage.getItem("UserFName")}{" "}
+                      {localStorage.getItem("UserLName")}
+                    </MenuItem>
+                    <MenuItem>
+                      {localStorage.getItem("UserEmail")}
+                    </MenuItem>
+                    <MenuItem  className={classes.profileIcon} >
+                      LOGOUT
+                    </MenuItem>
+                    </div>
+                  </Menu>
+                </Paper>{"success":true,"message":"Registration successfull, verification link has been sent to [hrarchana124@gmail.com], please check.","result":{"address":[],"isVerified":false,"_id":"6079b3ea383fbd00153d4696","fullName":"Archanagowda","email":"hrarchana124@gmail.com","password":"$2b$10$weibcV6BMeH/QeuF4vAwD.TcVzc5hK3oEs9gws78Uu/pcn3oR.gy2","phone":"+919041807000","createdAt":"2021-04-16T15:57:30.469Z","updatedAt":"2021-04-16T15:57:30.469Z","__v":0}}
