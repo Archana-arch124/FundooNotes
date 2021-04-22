@@ -54,7 +54,6 @@ export default class Login extends React.Component {
       passwordError: "",
       passwordFlag: false,
     };
-
     if (this.state.email.length === 0) {
       errors.emailFlag = true;
       isError = true;
