@@ -11,7 +11,6 @@ const service = new Services();
 function Alert(props) {
   return <MuiAlert variant="filled" {...props} />;
 }
-
 export default class Login extends React.Component {
   constructor(props){
     super(props);
@@ -71,7 +70,6 @@ export default class Login extends React.Component {
       isError = true;
       errors.passwordError = "Enter Password";
     }
-
     this.setState({
       ...errors,
     });
