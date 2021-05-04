@@ -13,7 +13,6 @@ function Alert(props) {
 }
 
 const service = new Services();
-
 export default class Registration extends React.Component {
 
   constructor(props){
