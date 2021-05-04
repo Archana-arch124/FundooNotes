@@ -5,6 +5,7 @@ import "./forgotPassword.css";
 import Services from "../../Services/userServices";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+
 const service = new Services();
 
 function Alert(props) {
@@ -12,7 +13,6 @@ function Alert(props) {
 }
 
 export default class Hello extends React.Component {
-  
   nextPath(path) {
     this.props.history.push(path);
   }
