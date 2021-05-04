@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import "./registration.css";
-import logo from "C:/ReactProject2/fundoonotes/src/Assets/logo.svg";
+import logo from "../../Assets/logo.svg";
 import Services from "../../Services/userServices";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";

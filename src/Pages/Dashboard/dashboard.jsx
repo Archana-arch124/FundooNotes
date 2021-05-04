@@ -6,7 +6,7 @@ import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import icon from "C:/ReactProject2/fundoonotes/src/Assets/keepIcon.png";
+import icon from "../../Assets/keepIcon.png";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
